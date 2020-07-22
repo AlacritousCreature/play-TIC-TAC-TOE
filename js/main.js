@@ -1,6 +1,11 @@
+//contant for X mark
 const X_CLASS = 'x';
 
+// circle shape for O mark
 const CIRCLE_CLASS = 'circle';
+
+// All possible of winning it
+//declare in a matrix
 
 const WINNING_COMBINATIONS = [
   [0, 1, 2],
@@ -12,16 +17,25 @@ const WINNING_COMBINATIONS = [
   [0, 4, 8],
   [2, 4, 6]
 ]
+
 const cellElements = document.querySelectorAll('[data-cell]');
 const board = document.getElementById('board');
+// winning message div appearance 
+// on win
 const winningMessageElement = document.getElementById('winningMessage');
 const restartButton = document.getElementById('restartButton');
 const winningMessageTextElement = document.querySelector('[data-winning-message-text]');
 let circleTurn;
 
+// initiate the game logic 
 startGame();
 
+// replay option
 restartButton.addEventListener('click', startGame);
+
+// =============================
+// All functions needed for game
+// =============================
 
 function startGame() {
   circleTurn = false;
